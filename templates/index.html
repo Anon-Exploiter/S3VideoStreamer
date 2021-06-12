@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+<!--  -->
+{% block head %}
+{% endblock %}
+
+<!--  -->
+{% block body %}
+
+<div class="row">
+    <ul class="collection with-header">
+        <li class="collection-header"><h5>Bucket directories and objects</h5></li>
+
+        {% for dirs in directories %}
+            <li class="collection-item"><div><i class="material-icons inline-icon">folder</i> <a href="/list?directory={{dirs}}">{{ dirs }}</a><a href="/" rel="_target" class="secondary-content"><i class="material-icons">launch</i></a></div></li>
+        {% endfor %}
+
+        {% for objects in files %}
+            {% set objectExtension = objects.split(".")[::-1][0] %}
+
+            {% if objectExtension == 'jpg' or objectExtension == 'jpeg' or objectExtension == 'png'  or objectExtension == 'gif' %}
+                <!-- <li class="collection-item"><div><i class="material-icons inline-icon">image</i> {{ objects }}<a href="/" rel="_target" class="secondary-content"><i class="material-icons">launch</i></a></div></li> -->
+                <!-- Extension: {{ objectExtension }} -->
+
+            {% elif objectExtension == 'mp4' or objectExtension == 'mkv' or objectExtension == 'mpeg' %}
+                <li class="collection-item"><div><i class="material-icons inline-icon">movie</i> <a href="/play?name={{objects}}">{{ objects }}</a><a href="/" rel="_target" class="secondary-content"><i class="material-icons">launch</i></a></div></li>
+                <!-- Extension: {{ objectExtension }} -->
+
+            {% endif %}
+        {% endfor %}
+
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+<!--  -->
+{% block head %}
+{% endblock %}
+
+<!--  -->
+{% block body %}
+
+<div class="row">
+
+    <h3>Error</h3>
+
+    {% if exception %}
+
+        <p>{{ exception }}</p>
+
+    {% else %}
+
+        <p><b>Access Keys not specified or invalid or expired/disabled.</b></p>
+
+    {% endif %}
+   
+</div>
+
+{% endblock %}
