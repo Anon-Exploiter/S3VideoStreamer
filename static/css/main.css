@@ -1,5 +1,5 @@
 /* Fixes issues with material icons alignment with text */
 .inline-icon {
-   vertical-align: bottom;
-   font-size: 25px !important;
+    vertical-align: bottom;
+    font-size: 25px !important;
 }
