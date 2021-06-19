@@ -20,7 +20,7 @@ Playing videos through S3 buckets (Wasabi, AWS, etc.) through client-side VideoJ
 
 Found **plex** as a solution, you've to install it, do local syncing using SSH tunnel, login with an account, create a local sync between the S3 bucket and the server hosting the solution. Plex also first downloads those files at server-side and then passes those to the user, **this incurs both ingress and egress traffic cost**. Other than that, **S3 costs for downloading as well.**
 
-This script simply just establishes a connection with the bucket, lists objects and then plays the video at client-side (rather than downloading on server-side first). So no ingress/egress cost for the application on EC2 server! Just the `S3 bucket` as desired! 
+This script simply just establishes a connection with the bucket, lists objects and then plays the video at client-side (rather than downloading on server-side first). So no *additional ingress/egress cost for the application on EC2 server! Just the `S3 bucket` as desired! 
 
 ### Tested On (OS & Python version)
 - Ubuntu 20.04 LTS -- Python 3.8.5
